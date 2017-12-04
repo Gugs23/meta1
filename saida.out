@@ -1,0 +1,324 @@
+Exec 0
+Valor => 3528 Tempo => 160.561
+    eil51_n49_bounded-strongly-corr_01_01.thop-------------------------
+Exec 1
+Valor => 3528 Tempo => 160.561
+    eil51_n49_bounded-strongly-corr_01_02.thop-------------------------
+Exec 2
+Valor => 4091 Tempo => 320.22
+    eil51_n49_bounded-strongly-corr_01_03.thop-------------------------
+Exec 3
+Valor => 7158 Tempo => 228.015
+    eil51_n49_bounded-strongly-corr_05_01.thop-------------------------
+Exec 4
+Valor => 9372 Tempo => 354.13
+    eil51_n49_bounded-strongly-corr_05_02.thop-------------------------
+Exec 5
+Valor => 10500 Tempo => 476.46
+    eil51_n49_bounded-strongly-corr_05_03.thop-------------------------
+Exec 6
+Valor => 10500 Tempo => 336.407
+    eil51_n49_bounded-strongly-corr_10_01.thop-------------------------
+Exec 7
+Valor => 14575 Tempo => 490.252
+    eil51_n49_bounded-strongly-corr_10_02.thop-------------------------
+Exec 8
+Valor => 18349 Tempo => 673.087
+    eil51_n49_bounded-strongly-corr_10_03.thop-------------------------
+Exec 9
+Valor => 612 Tempo => 194.149
+    eil51_n49_uncorr_01_01.thop-------------------------
+Exec 10
+Valor => 711 Tempo => 325.573
+    eil51_n49_uncorr_01_02.thop-------------------------
+Exec 11
+Valor => 711 Tempo => 439.674
+    eil51_n49_uncorr_01_03.thop-------------------------
+Exec 12
+Valor => 3861 Tempo => 234.166
+    eil51_n49_uncorr_05_01.thop-------------------------
+Exec 13
+Valor => 5054 Tempo => 342.257
+    eil51_n49_uncorr_05_02.thop-------------------------
+Exec 14
+Valor => 6126 Tempo => 462.533
+    eil51_n49_uncorr_05_03.thop-------------------------
+Exec 15
+Valor => 4470 Tempo => 264.224
+    eil51_n49_uncorr_10_01.thop-------------------------
+Exec 16
+Valor => 6126 Tempo => 392.884
+    eil51_n49_uncorr_10_02.thop-------------------------
+Exec 17
+Valor => 6305 Tempo => 543.97
+    eil51_n49_uncorr_10_03.thop-------------------------
+Exec 18
+Valor => 1999 Tempo => 44.2125
+    eil51_n49_uncorr-similar-weights_01_01.thop-------------------------
+Exec 19
+Valor => 1494 Tempo => 106.656
+    eil51_n49_uncorr-similar-weights_01_02.thop-------------------------
+Exec 20
+Valor => 2408 Tempo => 138.432
+    eil51_n49_uncorr-similar-weights_01_03.thop-------------------------
+Exec 21
+Valor => 4393 Tempo => 221.406
+    eil51_n49_uncorr-similar-weights_05_01.thop-------------------------
+Exec 22
+Valor => 5527 Tempo => 348.348
+    eil51_n49_uncorr-similar-weights_05_02.thop-------------------------
+Exec 23
+Valor => 5692 Tempo => 469.718
+    eil51_n49_uncorr-similar-weights_05_03.thop-------------------------
+Exec 24
+Valor => 5287 Tempo => 279.228
+    eil51_n49_uncorr-similar-weights_10_01.thop-------------------------
+Exec 25
+Valor => 6460 Tempo => 425.589
+    eil51_n49_uncorr-similar-weights_10_02.thop-------------------------
+Exec 26
+Valor => 7864 Tempo => 560.164
+    eil51_n49_uncorr-similar-weights_10_03.thop-------------------------
+Exec 27
+Solucão Inválida Capacidade
+    eil51_n147_bounded-strongly-corr_01_01.thop-------------------------
+Exec 28
+Valor => 12631 Tempo => 304.942
+    eil51_n147_bounded-strongly-corr_01_02.thop-------------------------
+Exec 29
+Valor => 14182 Tempo => 404.694
+    eil51_n147_bounded-strongly-corr_01_03.thop-------------------------
+Exec 30
+Valor => 30534 Tempo => 301.905
+    eil51_n147_bounded-strongly-corr_05_01.thop-------------------------
+Exec 31
+Valor => 41796 Tempo => 450.982
+    eil51_n147_bounded-strongly-corr_05_02.thop-------------------------
+Exec 32
+Valor => 45420 Tempo => 604.812
+    eil51_n147_bounded-strongly-corr_05_03.thop-------------------------
+Exec 33
+Valor => 38618 Tempo => 335.865
+    eil51_n147_bounded-strongly-corr_10_01.thop-------------------------
+Exec 34
+Valor => 53202 Tempo => 518.733
+    eil51_n147_bounded-strongly-corr_10_02.thop-------------------------
+Exec 35
+Valor => 61699 Tempo => 691.865
+    eil51_n147_bounded-strongly-corr_10_03.thop-------------------------
+Exec 36
+Valor => 1446 Tempo => 241.304
+    eil51_n147_uncorr_01_01.thop-------------------------
+Exec 37
+Valor => 2030 Tempo => 365.066
+    eil51_n147_uncorr_01_02.thop-------------------------
+Exec 38
+Valor => 2030 Tempo => 484.858
+    eil51_n147_uncorr_01_03.thop-------------------------
+Exec 39
+Valor => 2030 Tempo => 274.564
+    eil51_n147_uncorr_05_01.thop-------------------------
+Exec 40
+Valor => 2030 Tempo => 422.963
+    eil51_n147_uncorr_05_02.thop-------------------------
+Exec 41
+Valor => 2030 Tempo => 561.437
+    eil51_n147_uncorr_05_03.thop-------------------------
+Exec 42
+Valor => 2030 Tempo => 321.35
+    eil51_n147_uncorr_10_01.thop-------------------------
+Exec 43
+Valor => 2030 Tempo => 479.579
+    eil51_n147_uncorr_10_02.thop-------------------------
+Exec 44
+Valor => 2030 Tempo => 650.872
+    eil51_n147_uncorr_10_03.thop-------------------------
+Exec 45
+Valor => 3979 Tempo => 122.79
+    eil51_n147_uncorr-similar-weights_01_01.thop-------------------------
+Exec 46
+Valor => 2513 Tempo => 188.214
+    eil51_n147_uncorr-similar-weights_01_02.thop-------------------------
+Exec 47
+Valor => 3720 Tempo => 243.979
+    eil51_n147_uncorr-similar-weights_01_03.thop-------------------------
+Exec 48
+Valor => 13272 Tempo => 323.448
+    eil51_n147_uncorr-similar-weights_05_01.thop-------------------------
+Exec 49
+Valor => 18342 Tempo => 494.866
+    eil51_n147_uncorr-similar-weights_05_02.thop-------------------------
+Exec 50
+Valor => 21320 Tempo => 656.231
+    eil51_n147_uncorr-similar-weights_05_03.thop-------------------------
+Exec 51
+Valor => 14937 Tempo => 332.637
+    eil51_n147_uncorr-similar-weights_10_01.thop-------------------------
+Exec 52
+Valor => 22809 Tempo => 510.092
+    eil51_n147_uncorr-similar-weights_10_02.thop-------------------------
+Exec 53
+Valor => 25544 Tempo => 675.536
+    eil51_n147_uncorr-similar-weights_10_03.thop-------------------------
+Exec 54
+Valor => 20104 Tempo => 248.454
+    eil51_n245_bounded-strongly-corr_01_01.thop-------------------------
+Exec 55
+Valor => 23330 Tempo => 376.641
+    eil51_n245_bounded-strongly-corr_01_02.thop-------------------------
+Exec 56
+Valor => 26323 Tempo => 441.248
+    eil51_n245_bounded-strongly-corr_01_03.thop-------------------------
+Exec 57
+Valor => 58816 Tempo => 315.177
+    eil51_n245_bounded-strongly-corr_05_01.thop-------------------------
+Exec 58
+Valor => 78635 Tempo => 466.806
+    eil51_n245_bounded-strongly-corr_05_02.thop-------------------------
+Exec 59
+Valor => 94996 Tempo => 646.634
+    eil51_n245_bounded-strongly-corr_05_03.thop-------------------------
+Exec 60
+Valor => 71966 Tempo => 339.782
+    eil51_n245_bounded-strongly-corr_10_01.thop-------------------------
+Exec 61
+Valor => 105314 Tempo => 528.587
+    eil51_n245_bounded-strongly-corr_10_02.thop-------------------------
+Exec 62
+Valor => 117557 Tempo => 706.998
+    eil51_n245_bounded-strongly-corr_10_03.thop-------------------------
+Exec 63
+Valor => 2447 Tempo => 257.576
+    eil51_n245_uncorr_01_01.thop-------------------------
+Exec 64
+Valor => 1568 Tempo => 381.574
+    eil51_n245_uncorr_01_02.thop-------------------------
+Exec 65
+Valor => 3039 Tempo => 513.144
+    eil51_n245_uncorr_01_03.thop-------------------------
+Exec 66
+Valor => 1568 Tempo => 290.366
+    eil51_n245_uncorr_05_01.thop-------------------------
+Exec 67
+Valor => 2152 Tempo => 442.641
+    eil51_n245_uncorr_05_02.thop-------------------------
+Exec 68
+Valor => 2152 Tempo => 578.93
+    eil51_n245_uncorr_05_03.thop-------------------------
+Exec 69
+Valor => 2152 Tempo => 321.217
+    eil51_n245_uncorr_10_01.thop-------------------------
+Exec 70
+Valor => 2152 Tempo => 479.359
+    eil51_n245_uncorr_10_02.thop-------------------------
+Exec 71
+Valor => 3039 Tempo => 636.546
+    eil51_n245_uncorr_10_03.thop-------------------------
+Exec 72
+Valor => 10386 Tempo => 152.875
+    eil51_n245_uncorr-similar-weights_01_01.thop-------------------------
+Exec 73
+Valor => 6777 Tempo => 237.701
+    eil51_n245_uncorr-similar-weights_01_02.thop-------------------------
+Exec 74
+Valor => 8628 Tempo => 325.407
+    eil51_n245_uncorr-similar-weights_01_03.thop-------------------------
+Exec 75
+Valor => 22430 Tempo => 323.45
+    eil51_n245_uncorr-similar-weights_05_01.thop-------------------------
+Exec 76
+Valor => 31219 Tempo => 494.979
+    eil51_n245_uncorr-similar-weights_05_02.thop-------------------------
+Exec 77
+Valor => 38844 Tempo => 663.56
+    eil51_n245_uncorr-similar-weights_05_03.thop-------------------------
+Exec 78
+Valor => 24568 Tempo => 332.637
+    eil51_n245_uncorr-similar-weights_10_01.thop-------------------------
+Exec 79
+Valor => 38480 Tempo => 510.078
+    eil51_n245_uncorr-similar-weights_10_02.thop-------------------------
+Exec 80
+Valor => 43694 Tempo => 675.52
+    eil51_n245_uncorr-similar-weights_10_03.thop-------------------------
+Exec 81
+Valor => 36049 Tempo => 287.92
+    eil51_n490_bounded-strongly-corr_01_01.thop-------------------------
+Exec 82
+Solucão Inválida Capacidade
+    eil51_n490_bounded-strongly-corr_01_02.thop-------------------------
+Exec 83
+Valor => 50844 Tempo => 573.655
+    eil51_n490_bounded-strongly-corr_01_03.thop-------------------------
+Exec 84
+Valor => 111915 Tempo => 327.227
+    eil51_n490_bounded-strongly-corr_05_01.thop-------------------------
+Exec 85
+Valor => 147812 Tempo => 507.537
+    eil51_n490_bounded-strongly-corr_05_02.thop-------------------------
+Exec 86
+Valor => 172034 Tempo => 680.708
+    eil51_n490_bounded-strongly-corr_05_03.thop-------------------------
+Exec 87
+Valor => 125592 Tempo => 353.945
+    eil51_n490_bounded-strongly-corr_10_01.thop-------------------------
+Exec 88
+Valor => 197088 Tempo => 523.735
+    eil51_n490_bounded-strongly-corr_10_02.thop-------------------------
+Exec 89
+Valor => 231352 Tempo => 708.251
+    eil51_n490_bounded-strongly-corr_10_03.thop-------------------------
+Exec 90
+Valor => 3649 Tempo => 307.815
+    eil51_n490_uncorr_01_01.thop-------------------------
+Exec 91
+Valor => 4333 Tempo => 465.781
+    eil51_n490_uncorr_01_02.thop-------------------------
+Exec 92
+Valor => 7489 Tempo => 623.217
+    eil51_n490_uncorr_01_03.thop-------------------------
+Exec 93
+Valor => 3749 Tempo => 328.61
+    eil51_n490_uncorr_05_01.thop-------------------------
+Exec 94
+Valor => 4333 Tempo => 497.045
+    eil51_n490_uncorr_05_02.thop-------------------------
+Exec 95
+Valor => 8376 Tempo => 659.594
+    eil51_n490_uncorr_05_03.thop-------------------------
+Exec 96
+Valor => 4333 Tempo => 321.301
+    eil51_n490_uncorr_10_01.thop-------------------------
+Exec 97
+Valor => 4333 Tempo => 479.498
+    eil51_n490_uncorr_10_02.thop-------------------------
+Exec 98
+Valor => 8376 Tempo => 650.781
+    eil51_n490_uncorr_10_03.thop-------------------------
+Exec 99
+Valor => 9083 Tempo => 188.294
+    eil51_n490_uncorr-similar-weights_01_01.thop-------------------------
+Exec 100
+Valor => 13264 Tempo => 282.048
+    eil51_n490_uncorr-similar-weights_01_02.thop-------------------------
+Exec 101
+Valor => 20028 Tempo => 368.548
+    eil51_n490_uncorr-similar-weights_01_03.thop-------------------------
+Exec 102
+Valor => 44280 Tempo => 345.94
+    eil51_n490_uncorr-similar-weights_05_01.thop-------------------------
+Exec 103
+Valor => 66185 Tempo => 513.199
+    eil51_n490_uncorr-similar-weights_05_02.thop-------------------------
+Exec 104
+Valor => 68549 Tempo => 690.696
+    eil51_n490_uncorr-similar-weights_05_03.thop-------------------------
+Exec 105
+Valor => 48425 Tempo => 332.622
+    eil51_n490_uncorr-similar-weights_10_01.thop-------------------------
+Exec 106
+Valor => 76129 Tempo => 510.05
+    eil51_n490_uncorr-similar-weights_10_02.thop-------------------------
+Exec 107
+Valor => 86020 Tempo => 675.47
+    eil51_n490_uncorr-similar-weights_10_03.thop-------------------------
