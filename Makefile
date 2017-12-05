@@ -1,4 +1,4 @@
-Compile : THOPG THOP THOPSA COMP sub-make
+Compile : THOPG THOP THOPSA COMP FABIO sub-make
 
 THOPG: THOPG.cpp sub-make
 	g++ -o THOPG THOPG.cpp
@@ -11,6 +11,9 @@ THOPSA: THOPSA.cpp sub-make
 
 COMP: COMP.cpp sub-make
 	g++ -o COMP COMP.cpp
+
+FABIO: fabio.cpp sub-make
+	g++ -o FABIO fabio.cpp
 
 sub-make:
 	$(MAKE) -C Class/

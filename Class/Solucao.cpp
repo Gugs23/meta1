@@ -87,7 +87,7 @@ void Solucao::calculaRank(){
 	int j = total;
 	
 	for(int i = 0; i < total ; i++){
-		rank = (j / total);
+		rank = instance->getItem(i).valor/instance->getItem(i).peso;
 		instance->getItem(i).rank = rank;
 	}
 	
@@ -162,6 +162,99 @@ void Solucao::greedySolution(double accp){
 	
 }
 
+void Solucao::greedyRandomizedSolution(double accp, double alfaCidades, double alfaItens){
+	if(accp != 0){
+		ACCPT_FACTOR = accp;
+	}
+	delete itensEscolhidos;
+	delete pontosEscolhidos;
+
+	itensEscolhidos = new vector<int>();
+	pontosEscolhidos = new vector<int>();
+
+	int pontoAtual = 1;
+	int pontoDestino = instance->getDim();
+	int pesoAcum = 0;
+	int valorAcum = 0;
+	int dAtual, dFinal;
+	double tempoAtualI, tempoIFinal, tempoNess;
+	double tempoAcum = 0;
+	double timeLimit = instance->getMaxTime();
+	double v = instance->getVConst();
+	double maxSpeed = instance->getMaxSpeed();
+	
+	vector<Ponto> aux;
+	
+	calculaRank();
+	for(int i = 2; i < instance->getDim(); i++){
+		aux.push_back(instance->getPonto(i));
+	}
+	vector< pair <int, Ponto> > rcl;
+	sort(aux.begin(), aux.end());
+	// for(int i = 0; i < aux.size(); i++){
+	// 	cout << "rank" << aux[i].rank << endl;
+	// }
+	/**Pontos ordenados de acordo com o rank **/
+
+	bool parada = false;
+	while(!parada){
+		//cout << " ------------------------------ " << endl << endl << endl;
+		/**Verifica viabilidade de viajar para aquele ponto. Ou seja:
+		 * 1: É possível pegar o item de menor peso daquele ponto (capacidade)
+		 * 2: Existe tempo o suficiente sobrando para ir até o ponto, pegar o item de menor peso, e ir até o final?
+		 **/
+		 
+		for(int i = 0; i < aux.size() && rcl.size() <= ((int) (alfaCidades*aux.size())); i++) {
+			dAtual = instance->operator[](pontoAtual)[aux[i].id];
+			dFinal = instance->operator[](aux[i].id)[pontoDestino];
+			tempoAtualI = dAtual/(maxSpeed - v * pesoAcum);
+			tempoIFinal =  dFinal/(maxSpeed - v *(pesoAcum + aux[i].menorPeso));
+			
+			tempoNess = tempoAtualI + tempoIFinal;
+			
+			// cout << "Tempo ness " << tempoNess << endl;
+			
+			if(tempoNess + tempoAcum > timeLimit or pesoAcum + aux[i].menorPeso > instance->getCapacidade()){
+				continue;
+			} else {
+				rcl.push_back(make_pair(i,aux[i]));
+			}
+		}
+		if(rcl.size() == 0){
+			parada = true;
+			break;
+		} 
+		int lim = rand()%rcl.size();
+
+		dAtual = instance->operator[](pontoAtual)[rcl[lim].second.id];
+		dFinal = instance->operator[](rcl[lim].second.id)[pontoDestino];
+		tempoAtualI = dAtual/(maxSpeed - v * pesoAcum);
+		tempoIFinal =  dFinal/(maxSpeed - v *(pesoAcum + rcl[lim].second.menorPeso));
+		
+		tempoNess = tempoAtualI + tempoIFinal;
+		 
+		 //cout << "Passei no teste, vou para a cidade " << aux[i].id << endl;
+		 
+		 /**Cidade escolhida, atualiza tempo*/
+		 tempoAcum += tempoAtualI;
+		 
+		 /**Existe viabilidade de ir para aquela cidade. Faz a viagem, e pega itens.**/
+		 
+		 pegaItensRandomized(rcl[lim].second.id, pesoAcum, tempoAcum, valorAcum, alfaItens);
+		 pontosEscolhidos->push_back(rcl[lim].second.id);
+		 pontoAtual = rcl[lim].second.id;
+		 aux.erase(aux.begin()+rcl[lim].first);
+		 rcl.clear();
+	}
+	
+	//cout << " ----------- SOLUCAO CONSTRUIDA ------------------- " << endl;
+	sort(itensEscolhidos->begin(), itensEscolhidos->end());
+
+	mergeData();
+	
+}
+
+
 void Solucao::pegaItens(int nPt, int & pesoAcum, double & tempoAcum, int & valorAcum){
 	double timeLimit = instance->getMaxTime();
 	double v = instance->getVConst();
@@ -194,6 +287,53 @@ void Solucao::pegaItens(int nPt, int & pesoAcum, double & tempoAcum, int & valor
 		}
 	}
 	
+}
+
+void Solucao::pegaItensRandomized(int nPt, int & pesoAcum, double & tempoAcum, int & valorAcum, double & alfaItens){
+	double timeLimit = instance->getMaxTime();
+	double v = instance->getVConst();
+	double maxSpeed = instance->getMaxSpeed();
+	double ratioBag = 0;
+	int capacidade = instance->getCapacidade();
+	if(pesoAcum != 0){
+		ratioBag = (valorAcum / pesoAcum) * 100;
+	}
+	double tempoNess;
+	//cout << "Final é " << instance->getDim() << endl;
+	int dAtual = instance->operator[](nPt)[instance->getDim()];
+	//cout << "Dist da cidade " << nPt << " para final " << dAtual << endl;
+	vector<Item> itensAux(instance->getItensPonto(nPt));
+	vector<pair <int, Item> > rcl;
+	sort(itensAux.begin(), itensAux.end());
+	bool parada = false;
+	while (!parada) {
+		for(int i = 0; i < itensAux.size() && rcl.size() <= ((int) (alfaItens*itensAux.size())); i++){
+			Item at(itensAux[i]);
+			if(at.ratio < ratioBag * ACCPT_FACTOR){//Esse item possui ratio menor que factor do ratio atual da mochila?
+				break;
+			}
+			
+			tempoNess = dAtual/(maxSpeed - v * (pesoAcum + at.peso));
+			
+			if(tempoAcum + tempoNess < timeLimit && pesoAcum + at.peso <= capacidade){//É possível pegar o item e ir para o final?
+				//cout << "Peguei item " << at.id << endl;
+				rcl.push_back(make_pair(i,itensAux[i])); // poe item na lista de candidatos
+			}
+		}
+		if(rcl.size() == 0) {
+			parada = true;
+			break;
+		}
+		int lim = rand()%rcl.size();
+		Item at(itensAux[rcl[lim].first]);
+
+		itensEscolhidos->push_back(rcl[lim].second.id);
+		pesoAcum += at.peso;
+		valorAcum += at.valor;
+		ratioBag = (valorAcum / pesoAcum) * 100;
+		itensAux.erase(itensAux.begin()+rcl[lim].first);
+		rcl.clear();
+	}
 }
 
 void Solucao::addItem(int nItem){

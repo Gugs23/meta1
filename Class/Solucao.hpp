@@ -39,6 +39,8 @@ class Solucao{
 		
 		void pegaItens(int, int &, double &, int &);
 
+		void pegaItensRandomized(int, int &, double &, int &, double &);
+
 		double ACCPT_FACTOR;
 
 		void trocaPontos(int , int);
@@ -84,6 +86,8 @@ class Solucao{
 		bool validSolution();
 		
 		void greedySolution(double = 0);
+
+		void greedyRandomizedSolution(double, double, double);
 
 		void print();
 
