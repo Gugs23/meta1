@@ -20,7 +20,7 @@ vector<int> * Ponto::listaItens(){
 }
 
 bool Ponto::operator < (const Ponto &outro) const{
-	return rank > outro.rank;
+	return rank < outro.rank;
 }
 
 void Ponto::addItem(int nItem, int peso){

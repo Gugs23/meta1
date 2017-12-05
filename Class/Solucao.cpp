@@ -87,7 +87,7 @@ void Solucao::calculaRank(){
 	int j = total;
 	
 	for(int i = 0; i < total ; i++){
-		rank = instance->getItem(i).valor/instance->getItem(i).peso;
+		rank = ((double)i) / total;
 		instance->getItem(i).rank = rank;
 	}
 	
@@ -100,6 +100,8 @@ void Solucao::greedySolution(double accp){
 	}
 	delete itensEscolhidos;
 	delete pontosEscolhidos;
+
+	calculaRank();
 
 	itensEscolhidos = new vector<int>();
 	pontosEscolhidos = new vector<int>();

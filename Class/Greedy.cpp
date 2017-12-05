@@ -28,17 +28,19 @@ int main(int argc, char * argv[]){
 	
 	if(!solution->checkSolution(valor, tempo)){
 		solution->validSolution();
+	} else {
+		cout << valor << endl;
 	}
 
-	Solucao * s = solution->localSearch();
+	/* Solucao * s = solution->localSearch();
 
 	if(s->checkSolution(valor, tempo)){
 		cout << valor << endl;
 	} else {
 		solution->validSolution();
-	}
+	} */
 
-	delete s;
+	//delete s;
 	delete solution;
 	
 	FileControl::release();

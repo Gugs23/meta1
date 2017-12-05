@@ -13,7 +13,7 @@ int main(int argc, char * argv[]){
 	fstream fname(argv[1]);
 	
 	if(fname.fail()){
-		cout << "Impossível abrir arquivo de entrada" << endl;
+		cout << "Impossível abrir arquivo de entrada THOPG" << endl;
 	}
 	
 	int tipo;

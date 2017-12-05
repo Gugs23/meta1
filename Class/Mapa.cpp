@@ -150,10 +150,10 @@ void Mapa::attRanks(){
 	vector<int> * lista;
 	for(int i = 0; i < itens_ponto.size(); i++){
 		lista = itens_ponto[i].listaItens();
-		cout << i << " " << lista->size() << endl;
+		//cout << i << " " << lista->size() << endl;
 		for(int j = 0; j < lista->size(); j++){
 			itens_ponto[i].attRank(itens[lista->operator[](j)].rank);
 		}
-		cout << itens_ponto[i].rank << endl;
+		//cout << itens_ponto[i].rank << endl;
 	}
 }
