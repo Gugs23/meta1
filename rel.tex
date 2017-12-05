@@ -1,0 +1,144 @@
+\documentclass[12pt,14paper,onecolumn]{article}
+
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{indentfirst}
+
+
+\pagestyle{plain}
+\author{ES85248 - Gustavo Canal Uliana
+ES85282 - Fabio Henrique Martins Godoy}
+\title{Thief Orienteering Problem (ThOP)}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4
+}
+
+\begin{document}
+\setlength{\parindent}{5ex}
+\maketitle
+
+\section{Introdução}
+Com o desenvolvimento constante da computação, o surgimento de novos problemas é constante. Entretanto, um grupo de problemas já há muito tempo conhecidos, ainda é bastante estudado.
+Os integrantes desse grupo são problemas famosos, seja pela sua relevância histórica, utilizade ou dificuldade.
+
+Esse documento retrata uma séries de soluções para o problema ThOP, sendo esse uma combinação de dois problemas clássicos dos citados acima: O Problema do Caixeiro Viajante e o Problema da Mochila.
+
+No Problema do Caixeiro Viajante, temos um grafo completo e valorado de n vértices. O objetivo é encontrar um ciclo hamiltoniano no grafo (um ciclo que passe por todos os vértices do grafo sem passar duas vezes pelo mesmo vértice) de custo mínimo.
+
+No Problema da Mochila, consideramos que temos uma mochila de capacidade máxima de peso K, e um consjunto de n Itens, sendo que cada item possui um valor e um peso. O objetivo é selecionar um grupo de itens para colocar na mochila, de modo a obter o maior valor possível sem ultrapassar a capacidade K da mochila.
+
+Ambos os problemas são categorizados como NP-Difícil, logo não se conhece um algoritmo para resolvê-los em tempo polinomial. Muitas vezes, métodos heurísticos e aproximações são usadas, para fornecer um resultado aceitável dentro de um tempo útil.
+
+
+\section{O Problema}
+Aqui explicaremos mais sobre o ThOP.
+
+Assim como no PVC, existe um grafo valorado de n vértices, que representa os possíveis pontos a serem visitados. Diferentemente do problema original, entretanto, não é necessário que o ciclo passe por todos os pontos, somente que não ocorra repetições.
+O peso a aresta Aij representa a distancia entre os pontos i e j.
+
+Cada ponto possui sua lista de itens, e assim como no problema da mochila, cada item possui seu custo e valor.
+
+O objetivo é encontrar uma rota e plano de coleta de itens com ganho máximo para uma pessoa, aqui chamado de "ladrão".
+O ladrão possui os seguintes parâmetros:
+
+\begin{itemize}
+\item \textbf{Capacidade da Mochila}: Capacidade máxima de peso que pode carregar;
+\item \textbf{Velocidade Max}: A velocidade com que ele anda quando a mochila está vazia;
+\item \textbf{Velocidade Min}: A velocidade com que ele anda quando a mochila está na capacidade máxima;
+\item \textbf{Tempo Limite}: Tempo limite que o ladrão possui para fazer sua rota e retornar ao ponto inicial;
+\end{itemize}
+
+A Velocidade do ladrão reduz linearmente de acordo com o peso atual da mochila. Com sua velocidade atual e o valor de uma aresta Aij, podemos facilmente calcular o tempo que ele leva pra viajar de i para j.
+
+Assim, a rota e plano de coleta encontrados devem respeitar as restrições de tempo e capacidade da mochila. Obviamente, um item só pode ser coletado se seua cidade está inclusa na rota.
+
+Cada item está em uma única cidade.
+
+\section{Heurísticas}
+\subsection{Método Guloso (Greedy)}
+O primeiro método heurístico analisado será uma solução gulosa. 
+Para isso, definiremos o conceito de rank de Item e rank de Ponto.
+
+Dado um Item qualquer, seu rank é um valor no intervalo [0, 1) que indica a qualidade daquele item em relação aos outros, sendo 0 o melhor valor e 1 o pior valor.
+Para calcular o rank de um item, primeiramente calculamos o custo benefício (valor/peso) de todos os itens. Os itens serão então ordenados em função desse custo benefício.
+Uma vez que os n itens são ordenados, cada item receberá o rank i/n, onde i é sua posição na lista ordenada.
+Assim, o item com melhor custo benefício receberá o rank 0, e o item com pior custo benefício recebera o rank (n-1)/n (para valores grandes de n, aproximadamente 1).
+
+O rank de uma Cidade qualquer é dado pela soma do rank dos seus itens.
+
+Usaremos o rank de uma cidade no processo de decisão guloso: em qualquer momento da solucao, escolhemos ir para a cidade com o menor rank disponível. Uma vez lá, pegaremos os itens com melhores custo benefícios que não prejudiquem muito o custo benefício atual da mochila.
+
+O pseudo-código abaixo ilustra o algoritmo guloso:
+
+\begin{lstlisting}
+
+Solucao Greedy(){
+	Solucao S;
+	Cidade atual = inicial;
+	List<Cidades> cidades = cidades ordenadas por rank;
+	for(Cidade C in cidades){
+		if(verificaTempo(atual, C)){
+			S.pegaItens(C);
+			S.incluiRota(C);
+			atual = C;
+		} else {
+			continue;
+		}
+	}
+	return S;
+}
+
+bool verificaTempo(Cidades atual, Cidade C);
+//Verifica se é possível ir da cidade atual para C, pegar o item de menor peso, e ir até a cidade Final
+//Sem estourar o limite de tempo ou mochila
+
+\end{lstlisting}
+
+\subsection{Busca Local}
+
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\subsection{Simulated Annealing}
+
+\begin{lstlisting}
+
+
+\end{lstlisting}
+
+\subsection{GRASP}
+
+\begin{lstlisting}
+
+
+\end{lstlisting}
+
+
+\section{Resultados e Conclusões}
+
+
+\end{document}
