@@ -102,7 +102,7 @@ Solucao Greedy(){
 	for(Cidade C in cidades){
 		if(verificaTempo(atual, C)){
 			S.pegaItens(C);
-			S.incluiRota(C);
+			S.incluiCidade(C);
 			atual = C;
 		} else {
 			continue;
@@ -111,22 +111,70 @@ Solucao Greedy(){
 	return S;
 }
 
+void pegaItens(C){
+  List<Item> itens = itens da cidade C ordenadas por custo benefício
+  double ratio = mochila.valor / mochila.peso; //Custo benefício atual da mochila
+
+  foreach(Item I de itens){
+    if(I.ratio > ratio * fator de piora){//Se custo benefício do item for no max fator% do ratio da mochila
+      inclui I na solução;//Isso impede que incluir itens piore a solução até um valor lim. Algoritmo executado com ratio 90%.
+    }
+  }
+}
+
 bool verificaTempo(Cidades atual, Cidade C);
 //Verifica se é possível ir da cidade atual para C, pegar o item de menor peso, e ir até a cidade Final
 //Sem estourar o limite de tempo ou mochila
 
 \end{lstlisting}
 
-\subsection{Busca Local}
+\subsection{Busca Local - Vizinhanças}
+Foram consideradas as seguintes vizinhanças durantes as buscas locais:
 
-\begin{lstlisting}
+\begin{itemize}
+\item \textbf{Incluir cidade}: Incluir cidade no final da solução, onde o efeito no tempo será minimizado;
+			
+\item \textbf{Trocar Cidade}: Remover uma cidade e inserir outra no final, novamente buscando minimizar o impacto no tempo;
+		
+\item \textbf{Trocar Item}: Troca os itens atuais de uma cidade por outros;
+		
+\item \textbf{Troca Ordem Cidades}: Troca ordem de visita das cidades. Não tem efeito no valor da solução, mas pode melhorar o tempo;
 
-\end{lstlisting}
+\end{itemize}
+
+As vizinhanças eram analisadas em sequência, e a melhor era escolhida.
 
 \subsection{Simulated Annealing}
 
-\begin{lstlisting}
+Método baseado no Simmulated Annealing padrão, sem nenhuma alteração significativa.
+A "temperatura inicial" definida foi de 750, com fator de redução de 0.1, máximo de iterações de 100.
+A perturbação feita na solução buscava trocar algumas cidades por outras aleatórias.
+Segue o psudo-código da perturbação:
 
+\begin{lstlisting}
+Solucao perturbar(){
+	Lista<Cidades> possiveis = cidades nao inclusas na solucção atual
+	
+	int qtdPerturb = valor aleatório entre 0 e solucaoAtual.size()/2
+
+	for(i in 0 to qtdPerturb){
+		remove uma cidade aleatória da solução
+	}
+
+	while(for possível inserir cidades na solução){
+    Cidade C = cidade aleatória de possiveis
+		solucaoAtual.incluiCidade(C);
+    solucaoAtual.pegaItens(C);
+	}
+
+
+	for(i in 0 to qtdPerturb){
+    Cidade c = cidade aleatória da solucao
+		solucaoAtual.trocaItens(C)//troca itens atuais por itens aleatórios
+	}
+
+	retorna solucao modificada;
+}
 
 \end{lstlisting}
 
